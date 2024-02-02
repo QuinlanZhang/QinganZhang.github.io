@@ -8,7 +8,7 @@
 <title>About | Paul&#39;s Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="contact me at: zhangqingannn@gmail.com">
-<meta name="author" content="">
+<meta name="author" content="Paul">
 <link rel="canonical" href="https://qinganzhang.github.io/about/">
 
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.css" rel="preload stylesheet" as="style">
@@ -55,6 +55,10 @@
   "inLanguage": "en",
   "datePublished": "2024-01-31T09:26:44+08:00",
   "dateModified": "2024-01-31T09:26:44+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Paul"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://qinganzhang.github.io/about/"
@@ -69,6 +73,42 @@
   }
 }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" 
+    crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
+    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true },
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
+
 
 <noscript>
     <style>
@@ -170,7 +210,7 @@ function toggleThemeListener() {
 <script>
   
   (function() {
-    const defaultTheme = 'light';
+    const defaultTheme = 'auto';
     const prefTheme = getPrefTheme();
     const theme = prefTheme ? prefTheme : defaultTheme;
 
@@ -243,14 +283,16 @@ function toggleThemeListener() {
 
 <article class="post-single">
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <div class="breadcrumbs"><a href="https://qinganzhang.github.io/">Home</a></div><h1 class="post-title">About</h1>
   </header> 
+
   <div class="post-content"><p>contact me at: <a href="mailto:zhangqingannn@gmail.com">zhangqingannn@gmail.com</a></p>
 
 
   </div>
 
   <footer class="post-footer">
+
   </footer>
     <div class="comments-separator"></div>
 </article>
@@ -345,8 +387,55 @@ function toggleThemeListener() {
 
 
 
-<script src="/js/medium-zoom.min.js" data-no-instant integrity=""
+<script src="/js/medium-zoom.min.js" data-no-instant
 ></script>
+<script>
+  document.querySelectorAll('pre > code').forEach((codeblock) => {
+    const container = codeblock.parentNode.parentNode;
+
+    const copybutton = document.createElement('button');
+    copybutton.classList.add('copy-code');
+    copybutton.innerText = 'copy';
+
+    function copyingDone() {
+      copybutton.innerText = 'copied!';
+      setTimeout(() => {
+        copybutton.innerText = 'copy';
+      }, 2000);
+    }
+
+    copybutton.addEventListener('click', (cb) => {
+      if ('clipboard' in navigator) {
+        navigator.clipboard.writeText(codeblock.textContent);
+        copyingDone();
+        return;
+      }
+
+      const range = document.createRange();
+      range.selectNodeContents(codeblock);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      try {
+        document.execCommand('copy');
+        copyingDone();
+      } catch (e) { };
+      selection.removeRange(range);
+    });
+
+    if (container.classList.contains("highlight")) {
+      container.appendChild(copybutton);
+    } else if (container.parentNode.firstChild == container) {
+      
+    } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+      
+      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+    } else {
+      
+      codeblock.parentNode.appendChild(copybutton);
+    }
+  });
+</script>
 
 
 
@@ -355,7 +444,7 @@ function toggleThemeListener() {
   
   
   (function() {
-    const enableTocScroll = '' == '1'
+    const enableTocScroll = '1' == '1'
     if (!enableTocScroll) {
       return
     }

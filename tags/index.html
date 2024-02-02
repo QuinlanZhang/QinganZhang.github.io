@@ -7,8 +7,8 @@
 <meta name="robots" content="index, follow">
 <title>tags | Paul&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="Paul&#39;s blog for notes and recording">
+<meta name="author" content="Paul">
 <link rel="canonical" href="https://qinganzhang.github.io/tags/">
 
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.css" rel="preload stylesheet" as="style">
@@ -18,12 +18,48 @@
 <link rel="alternate" type="application/rss+xml" href="https://qinganzhang.github.io/tags/index.xml">
 
 <meta name="twitter:title" content="tags | Paul&#39;s Blog" />
-<meta name="twitter:description" content="" />
+<meta name="twitter:description" content="Paul&#39;s blog for notes and recording" />
 <meta property="og:title" content="tags | Paul&#39;s Blog" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Paul&#39;s blog for notes and recording" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qinganzhang.github.io/tags/" />
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" 
+    crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
+    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            
+            
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true },
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            ],
+            
+            throwOnError: false
+        });
+    });
+</script>
 
 
 <noscript>
@@ -126,7 +162,7 @@ function toggleThemeListener() {
 <script>
   
   (function() {
-    const defaultTheme = 'light';
+    const defaultTheme = 'auto';
     const prefTheme = getPrefTheme();
     const theme = prefTheme ? prefTheme : defaultTheme;
 
@@ -296,7 +332,7 @@ function toggleThemeListener() {
 
 
 
-<script src="/js/medium-zoom.min.js" data-no-instant integrity=""
+<script src="/js/medium-zoom.min.js" data-no-instant
 ></script>
 </body>
 
